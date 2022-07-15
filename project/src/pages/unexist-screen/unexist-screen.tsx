@@ -1,4 +1,6 @@
 import Logo from '../../components/logo/logo';
+import { Link } from 'react-router-dom';
+import { AppPageRoute } from '../../contants';
 
 const UnexistScreen = (): JSX.Element => (
   <div className="user-page">
@@ -13,7 +15,9 @@ const UnexistScreen = (): JSX.Element => (
         <p className="unexist-screen-message">
           Sorry, we couldn&apos;t find this page {':('}
         </p>
-        <a href="main.html" className="back-to-main__link"> Back to main</a>
+        <Link className="back-to-main__link" to={AppPageRoute.Main}>
+          Back to main
+        </Link>
       </div>
     </div>
 

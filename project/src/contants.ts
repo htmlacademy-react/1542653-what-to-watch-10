@@ -8,7 +8,7 @@ enum AppPageRoute {
   MyList = '/mylist',
   Film = '/films/:id',
   FilmReview = '/films/:id/review',
-  Player = '/player'
+  Player = '/player/:id'
 }
 
 enum AuthorizationStatus {
