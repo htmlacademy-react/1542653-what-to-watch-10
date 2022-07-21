@@ -1,14 +1,15 @@
-import FilmCard from '../../components/film-card/film-card';
 import Logo from '../../components/logo/logo';
-import {CARD_QTY_ON_PAGE} from '../../contants';
+import FilmList from '../../components/film-list/film-list';
+import { Film } from '../../types/film';
 
 type PromoFilm = {
   title: string,
   genre: string,
-  year: number
+  year: number,
+  filmCards: Film[]
 }
 
-const MainScreen = ({title, genre, year}: PromoFilm):JSX.Element => (
+const MainScreen = ({title, genre, year, filmCards}: PromoFilm):JSX.Element => (
   <section className="main">
     <section className="film-card">
       <div className="film-card__bg">
@@ -100,9 +101,7 @@ const MainScreen = ({title, genre, year}: PromoFilm):JSX.Element => (
           </li>
         </ul>
 
-        <div className="catalog__films-list">
-          {Array.from({length: CARD_QTY_ON_PAGE}, () => <FilmCard />)}
-        </div>
+        <FilmList films={filmCards}/>
 
         <div className="catalog__more">
           <button className="catalog__button" type="button">Show more</button>
