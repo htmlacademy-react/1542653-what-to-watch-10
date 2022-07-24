@@ -3,10 +3,10 @@ import { Film } from '../../types/film';
 import FilmList from '../../components/film-list/film-list';
 
 type MyListScreenProp = {
-  filmCards: Film[]
+  filmList: Film[]
 };
 
-const MyListScreen = ({filmCards}:MyListScreenProp):JSX.Element => (
+const MyListScreen = ({filmList}:MyListScreenProp):JSX.Element => (
   <div className="user-page">
     <header className="page-header user-page__head">
       <Logo isLightLogo={false}/>
@@ -26,7 +26,7 @@ const MyListScreen = ({filmCards}:MyListScreenProp):JSX.Element => (
 
     <section className="catalog">
       <h2 className="catalog__title visually-hidden">Catalog</h2>
-      <FilmList films={filmCards} />
+      <FilmList films={filmList} />
     </section>
 
     <footer className="page-footer">

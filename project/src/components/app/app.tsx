@@ -14,24 +14,24 @@ type MainPromoFilm = {
   title: string,
   genre: string,
   year: number,
-  filmCards: Film[]
+  filmList: Film[]
 }
 
-function App({title, genre, year, filmCards}: MainPromoFilm): JSX.Element {
+function App({title, genre, year, filmList}: MainPromoFilm): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={AppPageRoute.Main} element={<MainScreen filmCards={filmCards} title={title} genre={genre} year={year}/>} />
+        <Route path={AppPageRoute.Main} element={<MainScreen filmList={filmList} title={title} genre={genre} year={year}/>} />
         <Route path={AppPageRoute.Login} element={<AuthScreen />} />
-        <Route path={AppPageRoute.Film} element={<MovieScreen filmList={filmCards}/>} />
-        <Route path={AppPageRoute.FilmReview} element={<MovieScreenReview filmCards={filmCards}/>} />
+        <Route path={AppPageRoute.Film} element={<MovieScreen filmList={filmList}/>} />
+        <Route path={AppPageRoute.FilmReview} element={<MovieScreenReview filmList={filmList}/>} />
         <Route path={AppPageRoute.MyList} element={
           <PrivateRoute authStatus={AuthorizationStatus.Auth}>
-            <MyListScreen filmCards={filmCards} />
+            <MyListScreen filmList={filmList} />
           </PrivateRoute>
         }
         />
-        <Route path={AppPageRoute.Player} element={<PlayerScreen filmCards={filmCards} id={1}/>} />
+        <Route path={AppPageRoute.Player} element={<PlayerScreen filmList={filmList} />} />
         <Route path='*' element={<UnexistScreen />} />
       </Routes>
     </BrowserRouter>

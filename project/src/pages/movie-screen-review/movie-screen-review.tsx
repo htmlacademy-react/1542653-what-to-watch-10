@@ -1,15 +1,15 @@
 import Logo from '../../components/logo/logo';
-import CommentForm from '../../components/comment-form/comment-form';
+import ReviewForm from '../../components/review-form/review-form';
 import { Film } from '../../types/film';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 type MovieReviewProp = {
-  filmCards: Film[],
+  filmList: Film[],
 }
 
-const MovieScreenReview = ({ filmCards }: MovieReviewProp): JSX.Element => {
+const MovieScreenReview = ({ filmList }: MovieReviewProp): JSX.Element => {
   const queryParam = useParams();
-  const targetFilm = filmCards.find((film) => film.id === Number(queryParam.id));
+  const targetFilm = filmList.find((film) => film.id === Number(queryParam.id));
   return (
     <section className="film-card film-card--full" style={{background: targetFilm?.backgroundColor}}>
       <div className="film-card__header">
@@ -50,7 +50,7 @@ const MovieScreenReview = ({ filmCards }: MovieReviewProp): JSX.Element => {
       </div>
 
       <div className="add-review">
-        <CommentForm />
+        <ReviewForm />
       </div>
     </section>
   );

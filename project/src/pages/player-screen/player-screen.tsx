@@ -1,16 +1,19 @@
 import { Film } from '../../types/film';
+import { Link, useParams } from 'react-router-dom';
 
 type PlayerScreenProp = {
-  filmCards: Film[],
-  id: number
+  filmList: Film[],
 };
-const PlayerScreen = ({ filmCards, id }: PlayerScreenProp): JSX.Element => {
-  const targetFilm = filmCards.find((film) => film.id === id);
+const PlayerScreen = ({ filmList }: PlayerScreenProp): JSX.Element => {
+  const queryParam = useParams();
+  const targetFilm = filmList.find((film) => film.id === Number(queryParam.id));
   return (
     <div className="player">
       <video src="#" className="player__video" poster="img/player-poster.jpg"></video>
 
-      <button type="button" className="player__exit">Exit</button>
+      <Link to={`/films/${queryParam.id}`}>
+        <button type="button" className="player__exit">Exit</button>
+      </Link>
 
       <div className="player__controls">
         <div className="player__controls-row">

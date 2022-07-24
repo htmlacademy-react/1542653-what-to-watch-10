@@ -6,8 +6,7 @@ import films from './mock/films';
 const PromoFilmData = {
   TITLE: 'The Grand Budapest Hotel',
   GENRE: 'Drama',
-  YEAR: 2014,
-  filmCards: films,
+  YEAR: 2014
 };
 
 const root = ReactDOM.createRoot(
@@ -16,6 +15,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App filmCards={films} title={PromoFilmData.TITLE} genre={PromoFilmData.GENRE} year={PromoFilmData.YEAR} />
+    <App filmList={films} title={PromoFilmData.TITLE} genre={PromoFilmData.GENRE} year={PromoFilmData.YEAR} />
   </React.StrictMode>,
 );

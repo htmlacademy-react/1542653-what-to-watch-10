@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const CommentForm = (): JSX.Element => {
+const ReviewForm = (): JSX.Element => {
   const [reviewText, setReviewText] = useState('');
   return (
     <form action="#" className="add-review__form">
@@ -49,4 +49,4 @@ const CommentForm = (): JSX.Element => {
   );
 };
 
-export default CommentForm;
+export default ReviewForm;

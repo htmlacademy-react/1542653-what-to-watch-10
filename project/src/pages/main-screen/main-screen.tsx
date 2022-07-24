@@ -6,10 +6,10 @@ type PromoFilm = {
   title: string,
   genre: string,
   year: number,
-  filmCards: Film[]
+  filmList: Film[]
 }
 
-const MainScreen = ({title, genre, year, filmCards}: PromoFilm):JSX.Element => (
+const MainScreen = ({title, genre, year, filmList}: PromoFilm):JSX.Element => (
   <section className="main">
     <section className="film-card">
       <div className="film-card__bg">
@@ -101,7 +101,7 @@ const MainScreen = ({title, genre, year, filmCards}: PromoFilm):JSX.Element => (
           </li>
         </ul>
 
-        <FilmList films={filmCards}/>
+        <FilmList films={filmList}/>
 
         <div className="catalog__more">
           <button className="catalog__button" type="button">Show more</button>
